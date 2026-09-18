@@ -44,17 +44,27 @@ open site/index.html
 | Great Western Catskills | Tockify iCalendar feed | Delaware County regional listings |
 | Cannon Free Library, Delhi | All-in-One Event Calendar export | Library programs |
 | Huntington Memorial Library, Oneonta | Public Google Calendar | Library programs, including Oneonta Farmers Market |
+| Bushel Collective, Delhi | Events Manager list view, scraped | Talks, screenings, workshops, exhibitions at 106 Main St |
+| Bainbridge Chamber of Commerce | The Events Calendar REST API | Bainbridge events; the calendar is empty as of Sept 2026 |
 | Farmers markets | `sources/manual.py` | Delhi (Wed) and Oneonta (Sat), with seasonal locations |
 
-Adding a source is one entry in `src/localevents/sources/__init__.py`. Many small
-sites have a feed they don't advertise: try `?format=json` on Squarespace, the
-All-in-One Event Calendar export URL on WordPress, and the `src=` of any embedded
-Google Calendar (`calendar.google.com/calendar/ical/<id>/public/basic.ics`).
+Adding a source is one entry in `src/localevents/sources/__init__.py`, reusing one
+of the readers in `sources/`. Many small sites have a feed they don't advertise:
+try `?format=json` on Squarespace, `/wp-json/tribe/events/v1/events` for The Events
+Calendar, the All-in-One Event Calendar export URL, and the `src=` of any embedded
+Google Calendar (`calendar.google.com/calendar/ical/<id>/public/basic.ics`). Check
+what a feed actually contains before trusting it: Bushel's `?ical=1` export returns
+real iCalendar that stopped updating in 2020.
 
 ## Known gaps
 
-- **Bainbridge** has no usable source yet. The town calendar feed is only planning
-  board meetings, and the library has no online calendar.
+- **Bainbridge** is thin. The chamber of commerce has a working feed but no events
+  posted yet; the town calendar is only planning board meetings and the library has
+  no online calendar. The Jericho Arts Council posts its season as images on a
+  Weebly site, so reading it needs OCR.
+- **Delhi shops** mostly post to Facebook. The Lost Bookshop's site is a JavaScript
+  app with no feed, The Shire Pub has no site, and delhitel.com writes its listings
+  as prose in WordPress pages. All three need an LLM or a browser to read.
 - **Hike locations** are guessed from the title. The meeting place is in the
   description, which needs an LLM to read reliably.
 - **Categories** are keyword rules in `categorize.py`; misfiles are fixed there.

@@ -4,7 +4,7 @@
 the norm for single-venue calendars like a library's.
 """
 
-from . import ics, manual, squarespace
+from . import events_manager, ics, manual, squarespace, tribe
 
 SOURCES = {
     "catskill-mountain-club": {
@@ -36,6 +36,20 @@ SOURCES = {
         "ijtpa1kf6a3deouf1mn1ms6mhg%40group.calendar.google.com/public/basic.ics",
         "fetch": ics.fetch,
         "default_location": "Huntington Memorial Library, 62 Chestnut Street, Oneonta, NY",
+    },
+    "bushel": {
+        "name": "Bushel Collective (Delhi)",
+        "home": "https://www.bushelcollective.org/events/",
+        "url": "https://www.bushelcollective.org/events/",
+        "fetch": events_manager.fetch,
+        "default_location": "Bushel, 106 Main Street, Delhi, NY",
+    },
+    "bainbridge-chamber": {
+        "name": "Bainbridge Chamber of Commerce",
+        "home": "https://www.bainbridgecofc.com/events/",
+        "url": "https://www.bainbridgecofc.com/wp-json/tribe/events/v1/events",
+        "fetch": tribe.fetch,
+        "default_location": "Bainbridge, NY",
     },
     "farmers-markets": {
         "name": "Farmers markets (entered by hand)",
