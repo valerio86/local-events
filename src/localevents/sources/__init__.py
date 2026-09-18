@@ -51,8 +51,8 @@ SOURCES = {
         "fetch": tribe.fetch,
         "default_location": "Bainbridge, NY",
     },
-    "farmers-markets": {
-        "name": "Farmers markets (entered by hand)",
+    "hand-entered": {
+        "name": "Entered by hand (markets, Bainbridge Town Hall Theatre)",
         "home": "",
         "url": "",
         "fetch": manual.fetch,

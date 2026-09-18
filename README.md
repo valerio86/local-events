@@ -46,7 +46,7 @@ open site/index.html
 | Huntington Memorial Library, Oneonta | Public Google Calendar | Library programs, including Oneonta Farmers Market |
 | Bushel Collective, Delhi | Events Manager list view, scraped | Talks, screenings, workshops, exhibitions at 106 Main St |
 | Bainbridge Chamber of Commerce | The Events Calendar REST API | Bainbridge events; the calendar is empty as of Sept 2026 |
-| Farmers markets | `sources/manual.py` | Delhi (Wed) and Oneonta (Sat), with seasonal locations |
+| Entered by hand | `sources/manual.py` | Farmers markets: Delhi (Wed), Oneonta (Sat), seasonal locations. Bainbridge Town Hall Theatre's published season |
 
 Adding a source is one entry in `src/localevents/sources/__init__.py`, reusing one
 of the readers in `sources/`. Many small sites have a feed they don't advertise:
@@ -56,12 +56,25 @@ Google Calendar (`calendar.google.com/calendar/ical/<id>/public/basic.ics`). Che
 what a feed actually contains before trusting it: Bushel's `?ical=1` export returns
 real iCalendar that stopped updating in 2020.
 
+## Ideas for later
+
+- **Read the sources that have no feed with an LLM.** delhitel.com writes Delhi
+  listings as prose, The Lost Bookshop's site is a JavaScript app, and the Jericho
+  Arts Council posts its season as flyer images (which a vision model reads fine —
+  the fall 2026 entries in `manual.py` came from one). A daily Haiku pass over only
+  the pages whose text hash changed, submitted through the Batch API, was estimated
+  at roughly 10-30 cents a month. It needs `ANTHROPIC_API_KEY` as a GitHub secret,
+  and the build should print tokens used per run so the cost stays visible.
+- **Hike meeting places.** The Catskill Mountain Club puts the trailhead in the
+  description; today we guess from the title and flag it approximate.
+- **Let people suggest sources**, e.g. an issue template or a form.
+
 ## Known gaps
 
 - **Bainbridge** is thin. The chamber of commerce has a working feed but no events
   posted yet; the town calendar is only planning board meetings and the library has
-  no online calendar. The Jericho Arts Council posts its season as images on a
-  Weebly site, so reading it needs OCR.
+  no online calendar. The Jericho Arts Council's season is entered by hand from
+  its flyer, so it needs redoing each season.
 - **Delhi shops** mostly post to Facebook. The Lost Bookshop's site is a JavaScript
   app with no feed, The Shire Pub has no site, and delhitel.com writes its listings
   as prose in WordPress pages. All three need an LLM or a browser to read.

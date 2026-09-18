@@ -21,7 +21,7 @@ CATEGORIES = {
 
 RULES = [
     ("markets", r"farmers.?market|\bmarket\b|antiques|vintage|u-pick|farm day|flea|bazaar|harvest fest"),
-    ("crafts", r"pottery|ceramic|paint with|blacksmith|knit|stitch|crochet|quilt|sewing|weav|craft|art.?class|workshop|painting class|woodwork"),
+    ("crafts", r"pottery|ceramic|paint with|blacksmith|knit|stitch|crochet|quilt|sewing|weav|craft|art.?class|workshop|painting class|woodworking"),
     ("family", r"story ?(time|hour)|homeschool|discovery den|toddler|preschool|pre-k|lap ?sit|tiny tots|kids|children|minecraft|teen|youth|family|afternoon (adventure|explorer)|lego"),
     ("outdoors", r"\bhike|hiking|trail|mountain|\bloop\b|\brace\b|\b\dk\b|marathon|\brun\b|bike|cycling|paddl|kayak|\bski|bird|nature|walk|long path|lark in the park|sanctuary|yoga|tai chi"),
     ("culture", r"theat|music|concert|band|\bbook|author|reading|writer|poet|film|movie|exhibit|gallery|museum|histor|lecture|\btalk\b|dance|comedy|fiddl|\bjam\b|opera|symphony|choir|art|mahjong|scrabble|board game|chess"),
