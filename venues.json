@@ -3,6 +3,10 @@
   42.16466,
   -75.13471
  ],
+ "120 Main Street, Delhi, NY": [
+  42.27743,
+  -74.91706
+ ],
  "120 Main Street, Delhi, NY 13753": [
   42.27743,
   -74.91706
@@ -34,6 +38,14 @@
   -74.90913
  ],
  "43510 New York 28, Arkville, NY 12406": null,
+ "46549 State Highway 10, Delhi, NY": [
+  42.29849,
+  -74.88896
+ ],
+ "49 West Kortright Church Road, East Meredith, NY": [
+  42.40215,
+  -74.85178
+ ],
  "49 West Kortright Church Road, East Meredith, NY 13757": [
   42.40215,
   -74.85178
@@ -95,12 +107,17 @@
  "Courthouse Square, Main Street, Delhi, NY": null,
  "Delaware & Ulster Railroad, 43510 New York 28, Arkville, NY 12406": null,
  "Delaware County Fairgrounds, 12 Fair Street, Walton, NY 13856": null,
+ "Delaware County Historical Association, 46549 State Highway 10, Delhi, NY": null,
  "Eagle Mountain, New York": [
   42.06204,
   -74.50932
  ],
  "Eagle and Haynes Mountains, New York": null,
  "Foothills Performing Arts Center, 24 Market Street, Oneonta, NY": null,
+ "Franklin Free Library, 334 Main Street, Franklin, NY": [
+  42.33873,
+  -75.1659
+ ],
  "Galli Curci Theatre, 801 Main Street, Margaretville, NY 12455": [
   42.14894,
   -74.64819
@@ -148,10 +165,12 @@
  "Rosemary Farm Sanctuary, 1646 Roses Brook Road, South Kortright, NY 13842": null,
  "Roxbury Arts Center, Hilt Kelly Hall, 5025 Vega Mountain Road": null,
  "The Carriage House at Jay Gould Memorial Church, 53837 NY-30, Roxbury, NY 12474": null,
+ "The Lost Bookshop, 120 Main Street, Delhi, NY": null,
  "The Roxbury Arts Center, 5025 Vega Mountain Road": null,
  "Wall St, Oneonta, NY 13820": [
   42.45406,
   -75.06329
  ],
+ "West Kortright Center, 49 West Kortright Church Road, East Meredith, NY": null,
  "West Kortright Center, 49 West Kortright Church Road, East Meredith, NY 13757": null
 }

@@ -46,7 +46,7 @@ open site/index.html
 | Huntington Memorial Library, Oneonta | Public Google Calendar | Library programs, including Oneonta Farmers Market |
 | Bushel Collective, Delhi | Events Manager list view, scraped | Talks, screenings, workshops, exhibitions at 106 Main St |
 | Bainbridge Chamber of Commerce | The Events Calendar REST API | Bainbridge events; the calendar is empty as of Sept 2026 |
-| Entered by hand | `sources/manual.py` | Farmers markets: Delhi (Wed), Oneonta (Sat), seasonal locations. Bainbridge Town Hall Theatre's published season |
+| Entered by hand | `sources/manual.py` | Farmers markets: Delhi (Wed), Oneonta (Sat), seasonal locations. Published seasons for Bainbridge Town Hall Theatre, The Lost Bookshop, the Delaware County Historical Association, West Kortright Center |
 
 Adding a source is one entry in `src/localevents/sources/__init__.py`, reusing one
 of the readers in `sources/`. Many small sites have a feed they don't advertise:
@@ -75,9 +75,14 @@ real iCalendar that stopped updating in 2020.
   posted yet; the town calendar is only planning board meetings and the library has
   no online calendar. The Jericho Arts Council's season is entered by hand from
   its flyer, so it needs redoing each season.
-- **Delhi shops** mostly post to Facebook. The Lost Bookshop's site is a JavaScript
-  app with no feed, The Shire Pub has no site, and delhitel.com writes its listings
-  as prose in WordPress pages. All three need an LLM or a browser to read.
+- **Delhi shops** mostly post to Facebook. The Lost Bookshop runs on Bookmanager,
+  whose events API (`api.bookmanager.com/customer/event/v2/list`) needs a browser
+  session and blocks cross-origin calls, so its events are entered by hand and need
+  re-checking every couple of months. The Shire Pub has no site at all, and
+  delhitel.com writes its listings as prose in WordPress pages.
+- **Hand-entered seasons expire.** Every entry in `manual.py` says where it came
+  from and when it was read; the theatre, bookshop and DCHA lists all run out
+  around the end of 2026.
 - **Hike locations** are guessed from the title. The meeting place is in the
   description, which needs an LLM to read reliably.
 - **Categories** are keyword rules in `categorize.py`; misfiles are fixed there.
